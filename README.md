@@ -2,6 +2,9 @@
 
 A lightweight HTTP server optimized for serving Unity Web builds. Automatically configures proper MIME types and headers required for Web builds.
 
+> **⚠️ Development Use Only**  
+> This server is intended for development and testing environments only. Production use is not recommended.
+
 ## Features
 
 - 🎮 Optimized specifically for Unity Web builds
