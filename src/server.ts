@@ -155,8 +155,12 @@ if (!isGcsPath && !fs.existsSync(config.buildPath)) {
 
 // Logging middleware for file access
 app.use((req: Request, res: Response, next: NextFunction) => {
-  const timestamp = new Date().toLocaleString();
-  console.log(`[${timestamp}] ${req.method} ${req.url} - ${req.ip}`);
+  // Listen for the finish event to log the response
+  res.on('finish', () => {
+    const timestamp = new Date().toLocaleString();
+    console.log(`[${timestamp}] ${req.method} ${req.url} - ${res.statusCode} - ${req.ip}`);
+  });
+  
   next();
 });
 
