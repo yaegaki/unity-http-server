@@ -1,6 +1,6 @@
 {
   "name": "@yaegaki/unity-http-server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "displayName": "unity-http-server",
   "description": "A simple HTTP server optimized for serving Unity Web builds",
   "main": "dist/server.js",
