@@ -1,18 +1,36 @@
 {
   "name": "@yaegaki/unity-http-server",
   "version": "0.0.1",
-	"displayName": "unity-http-server",
+  "displayName": "unity-http-server",
   "description": "A simple HTTP server optimized for serving Unity Web builds",
   "main": "dist/server.js",
+  "types": "dist/server.d.ts",
+  "bin": {
+    "unity-http-server": "dist/server.js"
+  },
   "scripts": {
-    "build": "tsc",
+    "build": "rimraf dist && tsc",
     "start": "npm run build && node dist/server.js",
     "dev": "ts-node src/server.ts"
   },
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
   "keywords": ["unity", "web", "webgl", "server", "http"],
   "author": "yaegaki",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yaegaki/unity-http-server.git"
+  },
+  "homepage": "https://github.com/yaegaki/unity-http-server",
+  "bugs": {
+    "url": "https://github.com/yaegaki/unity-http-server/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "express": "^4.18.2",
     "cors": "^2.8.5",
@@ -25,6 +43,7 @@
     "@types/node": "^20.5.0",
     "typescript": "^5.1.6",
     "ts-node": "^10.9.1",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "rimraf": "^5.0.5"
   }
 }
